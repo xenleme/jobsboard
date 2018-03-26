@@ -1,3 +1,6 @@
-- @jobs.each do |job|
-  %h2= link_to job.title, job
-  %p= job.company
+- if !@jobs.blank?
+  - @jobs.each do |job|
+    %h2= link_to job.title, job
+    %p= job.company
+- else
+  %h2 So far there are no vacancies...
